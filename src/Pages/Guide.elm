@@ -32,7 +32,7 @@ view =
     column [ width (fill |> maximum 720), centerX ]
         [ Ui.hero
             { title = "guide"
-            , description = "let's do stuff!"
+            , description = "you got this!"
             , buttons = [ ( "getting started", "/guide/getting-started" ) ]
             }
         , el [ width (fill |> maximum 480), centerX] <|
