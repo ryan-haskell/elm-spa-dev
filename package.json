@@ -6,7 +6,7 @@
     "start": "npm install && npm run dev",
     "dev": "npm run elm:spa:build && npm run build:watch",
     "build": "npm run elm:spa:build && npm run elm:compile",
-    "build:watch": "concurrently --kill-others \"npm run elm:spa:watch\" \"npm run elm:live\"",
+    "build:watch": "concurrently --raw --kill-others \"npm run elm:spa:watch\" \"npm run elm:live\"",
     "elm:compile": "elm make src/Main.elm --output=public/dist/elm.compiled.js --optimize",
     "elm:live": "elm-live src/Main.elm --dir=public --start-page=index.html --open --pushstate --port=1234 -- --output=public/dist/elm.compiled.js --debug",
     "elm:spa:build": "elm-spa build .",
