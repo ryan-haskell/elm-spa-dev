@@ -48,5 +48,18 @@ viewSidebar route =
                     , ( "component", routes.docs_dynamic_dynamic "pages" "component" )
                     ]
               }
+            , { header = "layouts"
+              , links =
+                    [ ( "overview", routes.docs_dynamic "layouts" )
+                    , ( "transitions", routes.docs_dynamic_dynamic "layouts" "transitions" )
+                    ]
+              }
+            , { header = "other"
+              , links =
+                    [ ( "components", routes.docs_dynamic "components" )
+                    , ( "deploying", routes.docs_dynamic "deploying" )
+                    , ( "faqs", routes.docs_dynamic "faqs" )
+                    ]
+              }
             ]
         }
