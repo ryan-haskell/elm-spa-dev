@@ -3,17 +3,18 @@ module Ui exposing
     , colors
     , hero
     , markdown
-    , transition
     , sidebar
+    , transition
     )
 
 import Element exposing (..)
 import Element.Background as Background
 import Element.Border as Border
 import Element.Font as Font
+import Generated.Routes as Routes exposing (Route)
 import Html.Attributes as Attr
 import Markdown
-import Generated.Routes as Routes exposing (Route)
+
 
 colors : { coral : Element.Color, white : Element.Color }
 colors =
@@ -113,7 +114,7 @@ type alias Section =
 sidebar :
     { header : String
     , active : Route
-    , links : List (String, Route)
+    , links : List ( String, Route )
     , sections : List Section
     }
     -> Element msg
@@ -121,7 +122,7 @@ sidebar options =
     column
         [ spacing 16 ]
         [ el [ Font.semiBold, Font.size 24 ] (text options.header)
-        , column [ spacing 16]
+        , column [ spacing 16 ]
             (List.concat
                 [ List.map
                     (\link ->

@@ -2,8 +2,11 @@ module Layouts.Docs exposing (view)
 
 import Element exposing (..)
 import Element.Font as Font
+import Element.Region as Region
 import Generated.Routes as Routes exposing (Route, routes)
+import Html.Attributes as Attr
 import Ui exposing (colors)
+import Utils.Sidebar
 import Utils.Spa as Spa
 
 
@@ -16,11 +19,22 @@ view { page, route } =
             { top = 48
             , left = 16
             , right = 16
-            , bottom = 128
+            , bottom = 64
             }
         ]
-        [ el [ width (px 200), alignTop ] (viewSidebar route)
-        , el [ alignTop, width fill ] page
+        [ el
+            [ width (px 200)
+            , alignTop
+            , Region.aside
+            ]
+            (viewSidebar route)
+        , el
+            [ alignTop
+            , width fill
+            , Element.htmlAttribute (Attr.style "max-width" "calc(100% - 200px)")
+            , Region.mainContent
+            ]
+            page
         ]
 
 
@@ -29,37 +43,19 @@ viewSidebar route =
     Ui.sidebar
         { active = route
         , header = "docs"
-        , links = [ ( "overview", routes.docs_top ) ]
+        , links = Utils.Sidebar.docsLinks.overview
         , sections =
             [ { header = "elm-spa"
-              , links =
-                    [ ( "overview", routes.docs_dynamic "elm-spa" )
-                    , ( "elm-spa init", routes.docs_dynamic_dynamic "elm-spa" "init" )
-                    , ( "elm-spa add", routes.docs_dynamic_dynamic "elm-spa" "add" )
-                    , ( "elm-spa build", routes.docs_dynamic_dynamic "elm-spa" "build" )
-                    ]
+              , links = Utils.Sidebar.docsLinks.elmSpa
               }
             , { header = "pages"
-              , links =
-                    [ ( "overview", routes.docs_dynamic "pages" )
-                    , ( "static", routes.docs_dynamic_dynamic "pages" "static" )
-                    , ( "sandbox", routes.docs_dynamic_dynamic "pages" "sandbox" )
-                    , ( "element", routes.docs_dynamic_dynamic "pages" "element" )
-                    , ( "component", routes.docs_dynamic_dynamic "pages" "component" )
-                    ]
+              , links = Utils.Sidebar.docsLinks.pages
               }
             , { header = "layouts"
-              , links =
-                    [ ( "overview", routes.docs_dynamic "layouts" )
-                    , ( "transitions", routes.docs_dynamic_dynamic "layouts" "transitions" )
-                    ]
+              , links = Utils.Sidebar.docsLinks.layouts
               }
             , { header = "other"
-              , links =
-                    [ ( "components", routes.docs_dynamic "components" )
-                    , ( "deploying", routes.docs_dynamic "deploying" )
-                    , ( "faqs", routes.docs_dynamic "faqs" )
-                    ]
+              , links = Utils.Sidebar.docsLinks.other
               }
             ]
         }

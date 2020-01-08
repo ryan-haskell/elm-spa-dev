@@ -18,7 +18,7 @@ type alias Msg =
 page : Page Params.Guide Model Msg model msg appMsg
 page =
     Spa.Page.static
-        { title = always "Guide"
+        { title = always "guide · elm-spa"
         , view = always view
         }
 
@@ -29,13 +29,13 @@ page =
 
 view : Element Msg
 view =
-    column [ width (fill |> maximum 720), centerX ]
+    column [ width (fill |> maximum 720), centerX, paddingXY 16 0 ]
         [ Ui.hero
             { title = "guide"
-            , description = "you got this!"
-            , buttons = [ ( "getting started", "/guide/getting-started" ) ]
+            , description = "building an actual thing"
+            , buttons = [ ( "im down", "/guide/getting-started" ) ]
             }
-        , el [ width (fill |> maximum 480), centerX] <|
+        , el [ width (fill |> maximum 480), centerX ] <|
             Ui.markdown """
 ### what can i build with elm-spa?
 

@@ -19,7 +19,7 @@ type alias Msg =
 page : Page Params.NotFound Model Msg model msg appMsg
 page =
     Spa.Page.static
-        { title = always "not found | elm-spa"
+        { title = always "not found · elm-spa"
         , view = always view
         }
 

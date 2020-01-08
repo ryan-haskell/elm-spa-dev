@@ -1,20 +1,23 @@
 module Pages.Docs.Top exposing (Model, Msg, page)
 
-import Spa.Page
 import Element exposing (..)
 import Generated.Docs.Params as Params
-import Utils.Spa exposing (Page)
-import Ui
+import Generated.Routes as Routes
 import Http
+import Spa.Page
+import Ui
+import Utils.Sidebar
+import Utils.Spa exposing (Page)
+
 
 page : Page Params.Top Model Msg model msg appMsg
 page =
     Spa.Page.element
-        { title = always "Docs.Top"
+        { title = always "docs · elm-spa"
         , init = always init
         , update = always update
         , subscriptions = always subscriptions
-        , view = always view
+        , view = view
         }
 
 
@@ -60,7 +63,6 @@ update msg model =
 
 
 
-
 -- SUBSCRIPTIONS
 
 
@@ -73,6 +75,21 @@ subscriptions model =
 -- VIEW
 
 
-view : Model -> Element Msg
-view model =
-    Ui.markdown model.content
+view : Utils.Spa.PageContext -> Model -> Element Msg
+view context model =
+    column [ width fill, alignTop, spacing 32 ]
+        [ Ui.markdown model.content
+        , case Utils.Sidebar.nextDocsSection context.route of
+            Just nextSection ->
+                nextSection
+                    |> Tuple.second
+                    |> (\route ->
+                            ( "next up: " ++ Utils.Sidebar.prettify route
+                            , Routes.toPath route
+                            )
+                       )
+                    |> Ui.button
+
+            Nothing ->
+                Ui.button ( "checkout the guide?", "/guide" )
+        ]

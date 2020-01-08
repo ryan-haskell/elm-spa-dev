@@ -12,6 +12,6 @@ window.addEventListener('load', _ => {
 
 // maps actions to functions!
 const actions = {
-  'LOG': (message) =>
-    console.log(`From Elm:`, message)
+  'scrollToTop': _ =>
+    window.scroll({ top: 0, left: 0, behavior: 'smooth' })
 }

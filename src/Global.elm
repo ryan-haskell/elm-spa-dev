@@ -20,7 +20,7 @@ type alias Model =
 
 
 type Msg
-    = Msg
+    = ScrollToTop
 
 
 type alias Commands msg =
@@ -32,16 +32,18 @@ init : Commands msg -> Flags -> ( Model, Cmd Msg, Cmd msg )
 init _ _ =
     ( {}
     , Cmd.none
-    , Ports.log "Hello!"
+    , Cmd.none
     )
 
 
 update : Commands msg -> Msg -> Model -> ( Model, Cmd Msg, Cmd msg )
-update _ _ model =
-    ( model
-    , Cmd.none
-    , Cmd.none
-    )
+update _ msg model =
+    case msg of
+        ScrollToTop ->
+            ( model
+            , Cmd.none
+            , Ports.scrollToTop
+            )
 
 
 subscriptions : Model -> Sub Msg

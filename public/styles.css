@@ -19,6 +19,10 @@ html, body {
   padding-top: 0;
 }
 
+.markdown h1 {
+  line-height: 1;
+}
+
 .markdown h2 {
   opacity: 0.5;
   font-size: 1.5rem;
@@ -52,6 +56,10 @@ html, body {
 .markdown p, ul, ol {
   line-height: 1.4;
   font-size: 18px;
+}
+
+.markdown pre {
+  font-size: 16px;
 }
 
 .markdown p > code {
@@ -94,8 +102,13 @@ html, body {
   color: rgb(200, 75, 85);
 }
 
-.markdown ul {
+.markdown ul,
+.markdown ol {
   padding-left: 1.5rem;
+}
+
+.markdown ol li::before {
+  font-weight: bold;
 }
 
 .markdown ol ol {
@@ -123,6 +136,7 @@ html, body {
   max-width: 100%;
   overflow-x: auto;
   margin: 1rem 0;
+  font-size: 16px;
 }
 
 .markdown thead {
@@ -136,4 +150,14 @@ html, body {
 
 .markdown td {
   padding-right: 1em;
+}
+
+/* responsive sidebar */
+@media only screen and (max-width: 640px) {
+  aside {
+    display: none !important;
+  }
+  main {
+    max-width: 100% !important;
+  }
 }

@@ -2,19 +2,22 @@ module Pages.Docs.Dynamic exposing (Model, Msg, page)
 
 import Element exposing (..)
 import Generated.Docs.Params as Params
-import Spa.Page
-import Utils.Spa exposing (Page)
-import Ui
+import Generated.Routes as Routes
 import Http
+import Spa.Page
+import Ui
+import Utils.Sidebar
+import Utils.Spa exposing (Page)
+
 
 page : Page Params.Dynamic Model Msg model msg appMsg
 page =
     Spa.Page.element
-        { title = always "Docs.Dynamic"
+        { title = \{ model } -> String.replace "-" " " model.slug ++ " · guide · elm-spa"
         , init = always init
         , update = always update
         , subscriptions = always subscriptions
-        , view = always view
+        , view = view
         }
 
 
@@ -24,12 +27,13 @@ page =
 
 type alias Model =
     { content : String
+    , slug : String
     }
 
 
 init : Params.Dynamic -> ( Model, Cmd Msg )
 init { param1 } =
-    ( { content = "" }
+    ( { content = "", slug = param1 }
     , Http.get
         { expect = Http.expectString FetchedContent
         , url = "/content/docs/" ++ param1 ++ ".md"
@@ -72,6 +76,21 @@ subscriptions model =
 -- VIEW
 
 
-view : Model -> Element Msg
-view model =
-    Ui.markdown model.content
+view : Utils.Spa.PageContext -> Model -> Element Msg
+view context model =
+    column [ width fill, alignTop, spacing 32 ]
+        [ Ui.markdown model.content
+        , case Utils.Sidebar.nextDocsSection context.route of
+            Just nextSection ->
+                nextSection
+                    |> Tuple.second
+                    |> (\route ->
+                            ( "next up: " ++ Utils.Sidebar.prettify route
+                            , Routes.toPath route
+                            )
+                       )
+                    |> Ui.button
+
+            Nothing ->
+                Ui.button ( "checkout the guide?", "/guide" )
+        ]

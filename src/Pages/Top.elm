@@ -19,7 +19,7 @@ type alias Msg =
 page : Page Params.Top Model Msg model msg appMsg
 page =
     Spa.Page.static
-        { title = always "homepage"
+        { title = always "elm-spa"
         , view = always view
         }
 

@@ -2,6 +2,7 @@ module Layout exposing (view)
 
 import Element exposing (..)
 import Element.Font as Font
+import Element.Region as Region
 import Generated.Routes as Routes exposing (Route, routes)
 import Ui exposing (colors)
 import Utils.Spa as Spa
@@ -33,6 +34,7 @@ viewHeader currentRoute =
         , paddingEach { top = 32, left = 16, right = 16, bottom = 0 }
         , centerX
         , width (fill |> maximum 720)
+        , Region.navigation
         ]
         [ el [ Font.semiBold ] (viewLink currentRoute ( "elm-spa", routes.top ))
         , el [ Font.size 16 ] (viewLink currentRoute ( "docs", routes.docs_top ))
@@ -67,12 +69,14 @@ viewLink currentRoute ( label, route ) =
 
 viewFooter : Element msg
 viewFooter =
-    row
+    wrappedRow
         [ width (fill |> maximum 720)
         , centerX
         , paddingXY 16 48
         , Font.size 16
         , alpha 0.5
+        , Region.footer
+        , spacing 16
         ]
         [ text "this site was built with elm-spa!"
         , row [ alignRight, spacing 16, Font.underline ]
