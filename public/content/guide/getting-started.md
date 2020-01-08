@@ -1,6 +1,15 @@
 # getting started
 
+## don't have elm yet? [i gotchu](./installation)
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1TNQaJGkzh8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### what's in this section?
+
+1. installing elm-spa
+1. creating a new project
+1. updating the layout
+1. adding in a page
 
 
 ### installing elm-spa

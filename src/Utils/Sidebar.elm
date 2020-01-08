@@ -17,8 +17,11 @@ guideLinks : List Link
 guideLinks =
     [ ( "installation", routes.guide_dynamic "installation" )
     , ( "getting started", routes.guide_dynamic "getting-started" )
-    , ( "components", routes.guide_dynamic "creating-components" )
+    , ( "components", routes.guide_dynamic "components" )
     , ( "layouts", routes.guide_dynamic "layouts" )
+    , ( "markdown", routes.guide_dynamic "markdown" )
+    , ( "wrapping up", routes.guide_dynamic "wrapping-up" )
+    , ( "deploying", routes.guide_dynamic "deploying" )
     ]
 
 
