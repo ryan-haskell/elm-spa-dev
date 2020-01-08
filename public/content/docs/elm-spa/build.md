@@ -2,7 +2,7 @@
 
 ## generate glue based on your pages.
 
-<iframe></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NWOcaIKsL3U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### let's make a computer do it
 

@@ -50,8 +50,7 @@ It provides simple tooling and a convention for creating single page apps, so yo
 
 Also– it comes with a built-in pale dude:
 
-<iframe></iframe>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2HFVcPksBCY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### routing
 

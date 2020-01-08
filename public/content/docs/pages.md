@@ -2,7 +2,7 @@
 
 ## views rendered at some url.
 
-<iframe></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6tFH7FD8xHc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### how routing works
 

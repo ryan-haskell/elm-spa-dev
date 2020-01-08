@@ -2,7 +2,8 @@
 
 ## pages that make global updates.
 
-<iframe></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N_UzVU0wgVo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ### pages that make global updates.
 

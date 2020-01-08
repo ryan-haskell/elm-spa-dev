@@ -41,7 +41,7 @@ view =
 
 __This entire site!__ And in this guide we'll build it together, from scratch. (Step-by-step, with a video for each section)
 
-<iframe></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/X6fFQle_zPg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 __Are you officially hyped?__  Maybe you should click that button!
 """
