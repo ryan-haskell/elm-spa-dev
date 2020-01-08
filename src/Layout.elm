@@ -14,10 +14,7 @@ view { page, route } =
         [ height fill
         , width fill
         , Font.family
-            [ Font.external
-                { url = "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600"
-                , name = "Source Sans Pro"
-                }
+            [ Font.typeface "Source Sans Pro"
             , Font.serif
             ]
         ]
