@@ -56,4 +56,4 @@ This is how we can add a new page at `http://localhost:1234/docs`:
 elm-spa add static Docs
 ```
 
-If you'd like a better understanding of that command, you should check out the [elm-spa add docs here](/docs/elm-spa-add)!
+If you'd like a better understanding of that command, you should check out the [elm-spa add docs here](/docs/elm-spa/add)!
