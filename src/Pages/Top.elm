@@ -46,7 +46,7 @@ view =
 __elm-spa__ is a framework for building web apps in [Elm](https://elm-lang.org). It's not a "framework" like React or VueJS,
 it's more of a framework like NextJS, Rails, or .NET MVC.
 
-It provides simple tooling and a convention for creating single-page-apps, so you can focus on the cool thing you want to build!
+It provides simple tooling and a convention for creating single page apps, so you can focus on the cool thing you want to build!
 
 Also– it comes with a built-in pale dude:
 
