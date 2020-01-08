@@ -5,6 +5,11 @@ html, body {
   font-size: 16px;
 }
 
+body {
+  /* prevent scrollbar jumping on transition */
+  overflow-y: scroll;
+}
+
 .markdown {
   max-width: 40em;
 }
