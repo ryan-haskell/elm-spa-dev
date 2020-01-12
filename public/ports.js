@@ -13,5 +13,5 @@ window.addEventListener('load', _ => {
 // maps actions to functions!
 const actions = {
   'scrollToTop': _ =>
-    window.scroll({ top: 0, left: 0, behavior: 'smooth' })
+    window.scroll({ top: 0, left: 0 })
 }
