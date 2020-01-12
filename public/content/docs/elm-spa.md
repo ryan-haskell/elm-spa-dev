@@ -4,13 +4,24 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZvbQTNej_b8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### using elm-spa
+### quickstart
 
-If you have the latest [NodeJS](https://nodejs.org) installed, you already have the `npx` command.
+If you have the latest [NodeJS](https://nodejs.org) installed, you can use `npx` to get started.
 
 ```bash
-npx elm-spa help
+npx elm-spa init my-elm-spa
 ```
+
+```bash
+cd my-elm-spa
+```
+
+```bash
+npm start
+```
+
+That's it! Your app will be at `http://localhost:1234`
+
 
 ### installing elm-spa
 
